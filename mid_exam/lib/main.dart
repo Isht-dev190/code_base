@@ -25,6 +25,8 @@ void main() {
   ));
 }
 
+// Here i have defined a multibloc provider with themeBloc and navigationBloc
+
 class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(
     routes: [
@@ -42,6 +44,8 @@ class MyApp extends StatelessWidget {
       ),
     ],
   );
+// Above defined are go router routes, for home, categories and profile screen
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +62,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Above is the main app widget, which returns a material app with the theme data and router config
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -112,7 +117,7 @@ class MainScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // Home item - using GestureDetector instead of InkWell
+        
                   GestureDetector(
                     onTap: () {
                       context.read<NavigationBloc>().add(NavigateEvent(0));
@@ -222,3 +227,9 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
+// Main screen contains the bottom navigation bar with home, categories and profile screen, 
+// then it has a scaffold with icon buttons that toggle theme in app bar 
+// then in body we have the current screen
+// then in in bottom nav bar there are gesture detectors for three buttons
+// navigation to what screen it picks from navigation bloc
